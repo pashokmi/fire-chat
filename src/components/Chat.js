@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Context } from 'src/index'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { Button, CenterChat, ChatBox, ChatImage, ChatInput, Chatlabel } from 'src/styles/styles'
+import { Button, ChatImage, ChatInput, Chatlabel } from 'src/styles/styles'
 import { db } from 'src/common/firebaseApp'
 import { addDoc, collection, onSnapshot } from 'firebase/firestore'
 import Box from 'src/ui/Box'
@@ -14,7 +14,6 @@ const Chat = () => {
 
   const { auth } = useContext(Context)
   const [user] = useAuthState(auth)
-  console.log(user.uid)
   const [inputValue, setInputValue] = useState('')
   const [message, setMessage] = useState([])
 
@@ -27,20 +26,20 @@ const Chat = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const docRef = await addDoc(collection(db, 'messages'), {
+     await addDoc(collection(db, 'messages'), {
       uid: user.uid,
       displayName: user.displayName,
       photoURL: user.photoURL,
       text: inputValue,
       createdAt: new Date()
     })
-    console.log('Document written with ID: ', docRef.id)
+
     setInputValue('')
   }
 
-  const onPressEnter = (e)=>{
-    if(e.key === 'Enter'){
-      handleSubmit()
+  const onPressEnter = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit(e)
     }
   }
 
@@ -50,14 +49,14 @@ const Chat = () => {
       alignItems: 'center',
       flexDirection: 'column',
       height: 'calc(100vh - 65px)',
-      backgroundImage:` url(${bgChat})`,
+      backgroundImage: ` url(${bgChat})`,
       backgroundSize: 'cover',
-      backgroundPosition: 'top center',
+      backgroundPosition: 'top center'
     }}>
       <Box sx={{
         height: '83vh',
         width: '90%',
-        overflowY: 'scroll',
+        overflowY: 'scroll'
       }}>
         {message.map(({ id, photoURL, text, uid }) =>
           <Flex key={id} sx={{
