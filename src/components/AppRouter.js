@@ -4,6 +4,7 @@ import { CHAT_ROUTE, LOGIN_ROUTE } from 'src/utils/constans'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Context } from 'src/index'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import Chat from 'src/components/Chat'
 
 const AppRouter = () => {
   const { auth } = useContext(Context)
@@ -16,7 +17,7 @@ const AppRouter = () => {
           <Route
             key={path}
             path={path}
-            element={<Component />}
+            element={<Chat />}
             render={() => <Navigate to={CHAT_ROUTE} />} />
         )}
       </Routes>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { GiSmallFire } from 'react-icons/gi'
-import { Button } from 'src/styles/styles'
+import { Button, LogOuts } from 'src/styles/styles'
 import { NavLink } from 'react-router-dom'
 import { LOGIN_ROUTE } from 'src/utils/constans'
 import { Context } from 'src/index'
@@ -38,11 +38,19 @@ const NavBar = () => {
         <FText>{user ? 'Fire-CHAT' : 'Fire-LOGIN'}</FText>
       </Box>
       {user ?
-        <Button onClick={logOut}>Log Out</Button>
+        <>
+          <NavLink to={'/chat'} >CHAT</NavLink>
+          <LogOuts onClick={logOut}>Log Out</LogOuts>
+        </>
+
         :
-        <NavLink to={LOGIN_ROUTE}>
-          <Button>Login</Button>
-        </NavLink>
+        <>
+          <NavLink to={LOGIN_ROUTE}>
+            <Button>Login</Button>
+          </NavLink>
+
+        </>
+
 
       }
     </Nav>

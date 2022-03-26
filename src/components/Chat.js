@@ -19,7 +19,6 @@ const Chat = () => {
     onSnapshot(collection(db, 'messages'), (snapshot) => {
       setMessage(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     })
-    console.log('message arr', message)
   }, [])
 
   const handleSubmit = async (e) => {
@@ -32,7 +31,6 @@ const Chat = () => {
       createdAt: new Date()
     });
     console.log("Document written with ID: ", docRef.id);
-    console.log(message)
     setInputValue('')
   }
 

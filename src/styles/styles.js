@@ -26,6 +26,31 @@ export const Button = styled.button`
     transform: translateY(-1px);
   }
 `
+export const LogOuts = styled.button`
+  text-decoration: none;
+  display: inline-block;
+  min-width: 140px;
+  padding: 0 15px;
+  line-height: 45px;
+  border-radius: 45px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: #fc0404;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  transition: .3s;
+
+  :hover {
+    background: #990d37;
+    box-shadow: 0 15px 20px rgba(229, 46, 46, 0.4);
+    color: white;
+    transform: translateY(-1px);
+  }
+`
 
 
 export const Center = styled.div`

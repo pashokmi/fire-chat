@@ -1,6 +1,9 @@
-import { CHAT_ROUTE, LOGIN_ROUTE } from 'src/utils/constans'
 import Login from 'src/components/Login'
 import Chat from 'src/components/Chat'
+
+
+const LOGIN_ROUTE = '/login'
+const CHAT_ROUTE = '/chat'
 
 export const publicRoutes = [
   {
