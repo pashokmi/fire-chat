@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import bgChat from 'src/assets/bgChat.jpeg'
 
 export const Button = styled.button`
   text-decoration: none;
@@ -62,50 +61,29 @@ export const Center = styled.div`
   background-position: top center;
 `
 
-export const CenterChat = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: calc(100vh - 65px);
-  background-image: url(${bgChat});
-  background-size: cover;
-  background-position: top center;
-`
 export const ChatBox = styled.div`
-  height: 70vh;
-  width: 90%;
-
-  overflow-y: scroll;
+ 
 `
 export const ChatInput = styled.input`
-  padding: 10px;
+  padding: 10px 20px; 
+  margin-right: 10px;
   background-color: #c6c6c6;
   border-radius: 20px;
   width: 100%;
-  box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
 
   &::placeholder {
-
+    font-size: 14px;
+    padding-right: 10px;
   }
 `
 export const Chatlabel = styled.label`
-  padding: 10px;
   width: 90%;
   display: flex;
+  //box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+
 
 `
 export const ChatImage = styled.img`
   border-radius: 50%;
   width: 40px;
-  margin: 0 10px 10px 10px;
-`
-export const FlexChat = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 5px;
-  background-color: #fff;
-  border-radius: 50px 50px 50px 0;
-  margin-bottom: 10px;
 `
