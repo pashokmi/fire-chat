@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Button } from 'src/styles/styles'
 import styled from 'styled-components'
 import bgHero from 'src/assets/bgHero.jpeg'
-import firebase from 'firebase/app'
-import { Context } from 'src/index'
-import { GoogleAuthProvider } from "firebase/auth";
+import { signIn } from 'src/common/firebaseApp'
 
 
 const LoginCenter = styled.div`
@@ -17,17 +15,12 @@ const LoginCenter = styled.div`
   background-position: top center;
 `
 
-const Login = () => {
-  const { auth } = useContext(Context)
-  const logIn = async () => {
 
-    const provider = new GoogleAuthProvider()
-    const {user} = await auth.signInWithPopup(provider)
-    console.log(user)
-  }
+const Login = () => {
+
   return (
     <LoginCenter>
-      <Button onClick={logIn}>Login with Google</Button>
+      <Button onClick={signIn}>Login with Google</Button>
     </LoginCenter>
   )
 }
