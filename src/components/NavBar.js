@@ -9,8 +9,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 
 
 const Nav = styled.div`
-  background-color: #ff4e00;
-  background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+  background-image: linear-gradient(315deg, #070707 0%, #3b3833 74%);
   padding: 10px 25px;
   display: flex;
   align-items: center;
@@ -18,7 +17,8 @@ const Nav = styled.div`
 `
 const FText = styled.p`
   padding: 0 10px;
-  display: block
+  display: block;
+  color: aliceblue;
 `
 const Box = styled.div`
   display: flex;
@@ -40,7 +40,6 @@ const NavBar = () => {
       </Box>
       {user ?
         <>
-          <NavLink to={'/chat'}>CHAT</NavLink>
           <LogOuts onClick={logOut}>Log Out</LogOuts>
         </>
 
