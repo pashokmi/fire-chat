@@ -9,10 +9,10 @@ import Loader from 'src/components/Loader'
 
 const App = () => {
   const { auth } = useContext(Context)
-  const [user, loading, error] = useAuthState(auth)
+  const [ loading] = useAuthState(auth)
 
-  if (loading){
-    return <Loader/>
+  if (loading) {
+    return <Loader />
   }
 
   return (

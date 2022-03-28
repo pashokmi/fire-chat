@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import { GiSmallFire } from 'react-icons/gi'
 import { Button, LogOuts } from 'src/styles/styles'
 import { NavLink } from 'react-router-dom'
-import { LOGIN_ROUTE } from 'src/utils/constans'
+import { ABOUT_ROUTE, LOGIN_ROUTE } from 'src/utils/constans'
 import { Context } from 'src/index'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import Flex from 'src/ui/Flex'
 
 
 const Nav = styled.div`
@@ -44,11 +45,14 @@ const NavBar = () => {
         </>
 
         :
-        <>
+        <Flex flexWrap={'wrap'} justifyContent={'flex-end'}>
+          <NavLink to={ABOUT_ROUTE}>
+            <Button>About the project</Button>
+          </NavLink>
           <NavLink to={LOGIN_ROUTE}>
             <Button>Login</Button>
           </NavLink>
-        </>
+        </Flex>
 
 
       }

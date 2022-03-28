@@ -1,27 +1,38 @@
 import React from 'react'
-import { Button } from 'src/styles/styles'
-import styled from 'styled-components'
-import bgHero from 'src/assets/bgHero.jpeg'
 import { signIn } from 'src/common/firebaseApp'
-
-
-const LoginCenter = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 65px);
-  background-image: url(${bgHero});
-  background-size: cover;
-  background-position: top center;
-`
+import { FcGoogle } from 'react-icons/fc'
+import Flex from 'src/ui/Flex'
+import { GradientDiv } from 'src/styles/styles'
 
 
 const Login = () => {
 
   return (
-    <LoginCenter>
-      <Button onClick={signIn}>Login with Google</Button>
-    </LoginCenter>
+    <GradientDiv>
+      <Flex
+        sx={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 'calc(100vh - 65px)'
+        }}
+      >
+
+        <Flex
+          as={'button'}
+          onClick={signIn}
+          sx={{
+            alignItems: 'center',
+            backgroundColor: 'white',
+            borderRadius: '40px',
+            padding: '5px 10px'
+          }}
+        >
+          Login with Google
+          <FcGoogle size={40} />
+        </Flex>
+
+      </Flex>
+    </GradientDiv>
   )
 }
 
