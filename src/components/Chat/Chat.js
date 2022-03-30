@@ -64,16 +64,13 @@ const Chat = () => {
           backgroundPosition: 'top center'
         }}>
         <Flex
-
           alignItems={'flex-end'}
           sx={{
-            justifyContent: 'flex-end',
             flexDirection: 'column',
-            height: '100%',
             width: '95%',
             overflowY: 'scroll',
             '::-webkit-scrollbar': {
-              width: 0
+              width: '20px',
             }
           }}>
           {message.map((messages) =>
