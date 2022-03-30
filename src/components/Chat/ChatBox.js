@@ -4,16 +4,16 @@ import Box from 'src/ui/Box'
 import { ChatImage } from 'src/styles/styles'
 import Text from 'src/ui/Text'
 
-const ChatBox = ({ id, photoURL, text, uid, scrollRef, userId,displayName }) => {
+const ChatBox = ({ photoURL, text, uid, scrollRef, userId, displayName }) => {
   return (
     <Flex
       ref={scrollRef}
-      key={id}
+
       sx={{
         justifyContent: 'flex-start',
         flexDirection: `${userId === uid ? 'row-reverse' : 'row'}`,
         marginBottom: '10px',
-        width: '100$'
+        width: '100%'
       }}>
       <Flex bg={userId === uid ? '#d6f2f0' : '#f2e8d6'} sx={{
         flexDirection: `${userId === uid ? 'row-reverse' : 'row'}`,

@@ -34,6 +34,10 @@ const LoaderIcon = styled.div`
 const Loader = () => {
   return (
     <Flex
+      sx={{
+        backgroundImage: 'linear-gradient(315deg, #070707 0%, #3b3833 74%)',
+        height:'100vh'
+      }}
       justifyContent={'center'}
       alignItems={'center'}
     >

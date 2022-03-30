@@ -18,12 +18,13 @@ const About = () => {
       <Text
         fontSize={[4, 5]}
       >
-        Это чат где могут общаться много пользователей одновременно.
+        This is an application where you can exchange messages.
+        Where many users can chat at the same time.
       </Text>
       <Text
         fontSize={[4, 5]}
       >
-        Проэкт реализован в учебных целях.
+        The project was implemented for educational purposes.
       </Text>
       <Box
         as={'ul'}
@@ -36,7 +37,7 @@ const About = () => {
           fontSize={[2, 3, 4]}
           mb={2}
         >
-          В проекте использовались такие технологии:
+          The verification project includes the following technologies:
         </Text>
         <li>React</li>
         <li>React router dom</li>

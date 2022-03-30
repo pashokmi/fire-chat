@@ -7,6 +7,7 @@ import { ABOUT_ROUTE, LOGIN_ROUTE } from 'src/utils/constans'
 import { Context } from 'src/index'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Flex from 'src/ui/Flex'
+import Text from 'src/ui/Text'
 
 
 const Nav = styled.div`
@@ -16,15 +17,7 @@ const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
 `
-const FText = styled.p`
-  padding: 0 10px;
-  display: block;
-  color: aliceblue;
-`
-const Box = styled.div`
-  display: flex;
-  align-items: center;
-`
+
 const NavBar = () => {
   const { auth } = useContext(Context)
   const [user] = useAuthState(auth)
@@ -35,10 +28,23 @@ const NavBar = () => {
 
   return (
     <Nav>
-      <Box>
+      <Flex
+        alignItems={'center'}
+      >
         <GiSmallFire size={45} color={'red'} />
-        <FText>{user ? 'Fire-CHAT' : 'Fire-LOGIN'}</FText>
-      </Box>
+        <Text
+          fontSize={[3, 4]}
+          p={'0 10px'}
+          color={'white'}
+        >
+          {user
+            ?
+            'Fire-CHAT'
+            :
+            'Fire-LOGIN'
+          }
+        </Text>
+      </Flex>
       {user ?
         <>
           <LogOuts onClick={logOut}>Log Out</LogOuts>

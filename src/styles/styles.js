@@ -26,7 +26,7 @@ export const Button = styled.button`
   text-decoration: none;
   display: inline-block;
   padding: 5px 15px;
-  margin-bottom: 5px;
+  margin: 0 5px 5px 0;
   border-radius: 45px;
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;

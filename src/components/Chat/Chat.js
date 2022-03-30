@@ -59,22 +59,27 @@ const Chat = () => {
           alignItems: 'center',
           flexDirection: 'column',
           height: 'calc(100vh - 115px)',
-          backgroundImage: ` url(${bgChat})`,
+          backgroundImage: `url(${bgChat})`,
           backgroundSize: 'cover',
           backgroundPosition: 'top center'
         }}>
-        <Box sx={{
-          // height: '83vh',
-          width: '95%',
-          overflowY: 'scroll',
-          '::-webkit-scrollbar': {
-            width: 0
-          }
-        }}>
+        <Flex
+
+          alignItems={'flex-end'}
+          sx={{
+            justifyContent: 'flex-end',
+            flexDirection: 'column',
+            height: '100%',
+            width: '95%',
+            overflowY: 'scroll',
+            '::-webkit-scrollbar': {
+              width: 0
+            }
+          }}>
           {message.map((messages) =>
-            <ChatBox {...messages} scrollRef={scrollRef} userId={userId} />
+            <ChatBox {...messages} scrollRef={scrollRef} userId={userId} key={messages.id} />
           )}
-        </Box>
+        </Flex>
       </Flex>
       <SendMessage
         inputValue={inputValue}
