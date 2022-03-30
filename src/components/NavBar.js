@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import styled from 'styled-components'
 import { GiSmallFire } from 'react-icons/gi'
 import { Button, LogOuts } from 'src/styles/styles'
 import { NavLink } from 'react-router-dom'
@@ -8,15 +7,8 @@ import { Context } from 'src/index'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Flex from 'src/ui/Flex'
 import Text from 'src/ui/Text'
-
-
-const Nav = styled.div`
-  background-image: linear-gradient(315deg, #070707 0%, #3b3833 74%);
-  padding: 10px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
+import Container from 'src/ui/Container'
+import Box from 'src/ui/Box'
 
 const NavBar = () => {
   const { auth } = useContext(Context)
@@ -27,42 +19,53 @@ const NavBar = () => {
   }
 
   return (
-    <Nav>
-      <Flex
-        alignItems={'center'}
-      >
-        <GiSmallFire size={45} color={'red'} />
-        <Text
-          fontSize={[3, 4]}
-          p={'0 10px'}
-          color={'white'}
+    <Box
+      sx={{
+        backgroundImage: 'linear-gradient(315deg, #070707 0%, #3b3833 74%)'
+      }}
+    >
+      <Container>
+        <Flex
+          sx={{
+            padding: '10px 25px',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
         >
+
+          <Flex
+            alignItems={'center'}
+          >
+            <GiSmallFire size={45} color={'red'} />
+            <Text
+              fontSize={[3, 4]}
+              p={'0 10px'}
+              color={'white'}
+            >
+              {user
+                ?
+                'Fire-CHAT'
+                :
+                'Fire-LOGIN'
+              }
+            </Text>
+          </Flex>
           {user
             ?
-            'Fire-CHAT'
+            <LogOuts onClick={logOut}>Log Out</LogOuts>
             :
-            'Fire-LOGIN'
+            <Flex flexWrap={'wrap'} justifyContent={'flex-end'}>
+              <NavLink to={ABOUT_ROUTE}>
+                <Button>About the project</Button>
+              </NavLink>
+              <NavLink to={LOGIN_ROUTE}>
+                <Button>Login</Button>
+              </NavLink>
+            </Flex>
           }
-        </Text>
-      </Flex>
-      {user ?
-        <>
-          <LogOuts onClick={logOut}>Log Out</LogOuts>
-        </>
-
-        :
-        <Flex flexWrap={'wrap'} justifyContent={'flex-end'}>
-          <NavLink to={ABOUT_ROUTE}>
-            <Button>About the project</Button>
-          </NavLink>
-          <NavLink to={LOGIN_ROUTE}>
-            <Button>Login</Button>
-          </NavLink>
         </Flex>
-
-
-      }
-    </Nav>
+      </Container>
+    </Box>
   )
 }
 

@@ -3,11 +3,12 @@ import Flex from 'src/ui/Flex'
 import { ChatInput } from 'src/styles/styles'
 import Box from 'src/ui/Box'
 import { FaRegArrowAltCircleUp } from 'react-icons/fa'
+import Container from 'src/ui/Container'
 
 const SendMessage = ({ inputValue, onPressEnter, handleSubmit, setInputValue }) => {
   return (
     <Box height={'50px'} bg={'#3B3833FF'}>
-      <Flex
+      <Container> <Flex
         mb={'5px'}
         m={'0 auto'}
         as={'label'}
@@ -39,6 +40,7 @@ const SendMessage = ({ inputValue, onPressEnter, handleSubmit, setInputValue }) 
           />
         </Box>
       </Flex>
+      </Container>
     </Box>
   )
 }

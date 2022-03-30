@@ -16,7 +16,6 @@ const Login = () => {
           height: 'calc(100vh - 65px)'
         }}
       >
-
         <Flex
           as={'button'}
           onClick={signIn}
@@ -30,7 +29,6 @@ const Login = () => {
           Login with Google
           <FcGoogle size={40} />
         </Flex>
-
       </Flex>
     </GradientDiv>
   )

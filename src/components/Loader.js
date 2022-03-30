@@ -36,7 +36,7 @@ const Loader = () => {
     <Flex
       sx={{
         backgroundImage: 'linear-gradient(315deg, #070707 0%, #3b3833 74%)',
-        height:'100vh'
+        height: '100vh'
       }}
       justifyContent={'center'}
       alignItems={'center'}
