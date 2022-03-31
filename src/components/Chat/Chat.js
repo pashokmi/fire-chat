@@ -5,7 +5,7 @@ import { db } from 'src/common/firebaseApp'
 import { addDoc, collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore'
 import Box from 'src/ui/Box'
 import Flex from 'src/ui/Flex'
-import bgChat from 'src/assets/bgChat.jpeg'
+import bgChat from 'src/assets/bgChat-min.jpeg'
 import ChatBox from 'src/components/Chat/ChatBox'
 import SendMessage from 'src/components/Chat/SendMessage'
 
@@ -70,7 +70,7 @@ const Chat = () => {
             width: '95%',
             overflowY: 'scroll',
             '::-webkit-scrollbar': {
-              width: '20px',
+              width: '0px',
             }
           }}>
           {message.map((messages) =>
