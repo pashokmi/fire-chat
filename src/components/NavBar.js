@@ -46,7 +46,7 @@ const NavBar = () => {
                 ?
                 'Fire-CHAT'
                 :
-                'Fire-LOGIN'
+                'LOGIN'
               }
             </Text>
           </Flex>
